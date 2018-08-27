@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>
+      (function() {
+        var baseFontSize = 100;
+        var baseWidth = 1920;
+  
+        var set = function(win,doc) {
+          var clientWidth = doc.documentElement.clientWidth || win.innerWidth;
+  
+          var rem = 100;
+          if (clientWidth != baseWidth) {
+            rem = Math.floor(clientWidth / baseWidth * baseFontSize);
+          }
+  
+          doc.querySelector('html').style.fontSize = rem + 'px';
+        }
+        set();
+  
+        win.addEventListener('resize', set);
+      }(window,document))
+    </script>
+    <!-- <link rel="stylesheet" href="../static/common/css/base.css"> -->
+    <!-- <link rel="stylesheet" href="../static/common/css/common.css"> -->
+    
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

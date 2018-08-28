@@ -10,7 +10,10 @@
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "clean": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm run clean",
+    "test1": "node server.js"
   },
   "dependencies": {
     "jsonwebtoken": "^8.3.0",
@@ -21,6 +24,7 @@
     "koa-static": "^5.0.0",
     "koa-static-cache": "^5.1.2",
     "koa-views": "^6.1.4",
+    "log4js": "^3.0.5",
     "mysql": "^2.16.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

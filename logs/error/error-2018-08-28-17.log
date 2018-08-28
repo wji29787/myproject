@@ -1,0 +1,17 @@
+[2018-08-28T17:12:04.639] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 2
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+

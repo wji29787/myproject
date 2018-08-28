@@ -1,0 +1,153 @@
+[2018-08-28T16:42:46.802] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 1
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:42:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:45:41.803] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 1
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:43:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:47:12.852] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 0
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:47:40.175] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 0
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:49:17.804] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 0
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:49:18.684] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 0
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:51:27.827] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 0
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:57:16.832] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 0
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+
+[2018-08-28T16:57:27.176] [ERROR] errorLogger - 
+**************** error log start *****************
+request methodGET
+request originalUrl: /api/users/getUser
+request client ip: 192.168.95.252
+request query: {}
+response time: 2
+err name: ReferenceError
+err message: formatReqLog is not defined
+err stack: ReferenceError: formatReqLog is not defined
+    at formatRes (E:\study\myproject\utils\log_util.js:53:5)
+    at Object.logUtil.logResponse (E:\study\myproject\utils\log_util.js:23:24)
+    at app.use (E:\study\myproject\server.js:47:17)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+*************** error log end ***************
+

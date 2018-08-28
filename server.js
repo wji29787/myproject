@@ -1,5 +1,10 @@
-const Koa=require('koa');
-const path =require('path');
+const Koa = require('koa');
+const path = require('path');
+const util = require('util');
+const jwt = require('jsonwebtoken');
+const jwtKoa = require('koa-jwt');
+const verify = util.promisify(jwt.verify);// 解密
+const secret = 'jwt demo';
 //解析提交的表单信息
 const bodyParser =require('koa-bodyparser')
 // 路由 
@@ -9,36 +14,62 @@ const views =require('koa-views');
 // 配置静态资源 目录为 static
 const staticCache=require('koa-static-cache');
 
+// 日志工具 输出日志
+const logUtil =require('./utils/log_util');
 const app=new Koa();
+//初始化logger日志文件
+// logUtil.initLogPath();
 
 //缓存 
-app.use(staticCache(path.join(__dirname,'./dist'),{dynamic:true},{
-    maxAge: 365 * 24 * 60 * 60
-}));
-app.use(staticCache(path.join(__dirname, './dist/pages'), { dynamic: true }, {
-    maxAge: 365 * 24 * 60 * 60
-}));
+// app.use(staticCache(path.join(__dirname,'./dist'),{dynamic:true},{
+//     maxAge: 365 * 24 * 60 * 60
+// }));
+// app.use(staticCache(path.join(__dirname, './dist/pages'), { dynamic: true }, {
+//     maxAge: 365 * 24 * 60 * 60
+// }));
+
+app.use(bodyParser({
+    formLimit:'1mb'
+}));  
+
+//logger 
+app.use(async (ctx,next) =>{
+    //响应开始时间
+    // console.log(ctx.url,ctx.body);
+    const start = new Date();
+    //响应间隔时间
+    var ms;
+    try {
+        //开始进入到下一个中间件
+        await next();
+        ms = new Date() -start;
+        //记录响应日志
+        logUtil.logResponse(ctx,ms);
+    } catch(error){
+        ms = new Date() - start;
+        //记录异常日志
+        logUtil.logError(ctx,error,ms);
+    } 
+});
 
   //配置服务端模板渲染引擎中间件
 // app.use(views(path.join(__dirname,'./dist/pages'),{
 //     extension:'html'
 // }));
-app.use(async (ctx,next)=>{
-    console.log(ctx.url,ctx.method);
-    // if(ctx.url=='/'){
-    //     await ctx.render('contentEditing');
-    // }
-    await next();
-});
-app.use(bodyParser({
-    formLimit:'1mb'
-}));  
+
+
 // router.get('/',async (ctx,next)=>{
 //     // console.log(1111);
 //     await ctx.render('contentEditing');
 // });
-// app.use(router.routes());
+const response_formatter = require('./middlewares/response_formatter');
+//添加格式化处理响应结果的中间件，在添加路由之前调用
+app.use(response_formatter('^/api'));
+const api =require('./routers/api');
+router.use('/api',api.routes(),api.allowedMethods());
+app.use(router.routes(),router.allowedMethods());
 
-app.listen('3000','192.168.95.252',()=>{
+var ss= app.listen('3000','192.168.95.252',()=>{
      console.log('err');
 }); 
+// console.log(ss);

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script>
-      (function() {
+      (function(win,doc) {
         var baseFontSize = 100;
         var baseWidth = 1920;
   
-        var set = function(win,doc) {
+        var set = function() {
           var clientWidth = doc.documentElement.clientWidth || win.innerWidth;
   
           var rem = 100;

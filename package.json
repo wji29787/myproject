@@ -11,11 +11,15 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "build": "node build/build.js",
+    "buildsigle": "node build/single/build.js",
+    "devsigle": "webpack-dev-server --inline --progress --config build/single/webpack.dev.conf.js",
     "clean": "rimraf ./dist && mkdir dist",
     "prebuild": "npm run clean",
-    "test1": "node server.js"
+    "test1": "node server.js",
+    "test2": "mocha"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "jsonwebtoken": "^8.3.0",
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",
@@ -25,6 +29,7 @@
     "koa-static-cache": "^5.1.2",
     "koa-views": "^6.1.4",
     "log4js": "^3.0.5",
+    "md5": "^2.2.1",
     "mysql": "^2.16.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
@@ -43,6 +48,7 @@
     "babel-preset-env": "^1.3.2",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
+    "chai": "^4.1.2",
     "chalk": "^2.0.1",
     "chromedriver": "^2.27.2",
     "copy-webpack-plugin": "^4.0.1",
@@ -54,6 +60,7 @@
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
+    "mocha": "^5.2.0",
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -66,6 +73,7 @@
     "selenium-server": "^3.0.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
+    "supertest": "^3.1.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-jest": "^1.0.2",

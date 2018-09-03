@@ -11,18 +11,27 @@
 				<div class="login-box-content-input"><label class=""></label><input id="pass_word" type="password" v-model="pass_word" placeholder="请输入密码"/></div>
 				<div class="login-box-content-button">
 					<button id="login_btn" @click="login()" >登&nbsp;&nbsp;录</button>
+					<!-- <aaaaa :name="4"></aaaaa> -->
 				</div>
 			</div>
   </div>
 </template>
 
 <script>
+// import Vue from 'vue';
+// const author=Vue.extend({
+// 	template:`<div>
+// 						{{name}}
+// 	<div>`,
+// 	props:['name'],
+// });
+
 export default {
-  name: 'App',
+  	name: 'App',
   // components:{
-  //   Hearders
-	// }
-	  data(){
+  //   aaaaa:author
+	// },
+		data(){
 			return {
 				user_name:'',
 				pass_word:''
@@ -30,7 +39,7 @@ export default {
 		},
 		methods:{
 			login(){
-
+				this.$layer_msg('jajajaj');
 			}
 		}
 }

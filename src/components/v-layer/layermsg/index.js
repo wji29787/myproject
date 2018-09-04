@@ -1,26 +1,6 @@
 import Vue from 'vue'
 import Message from './main.vue';
-let optParam=function(opt){
-    var options;
-    for(let prop in opt){
-        if(opt.hasOwnProperty(prop)){
-            let value = opt[prop];
-            if(typeof value ==='function'){
-                    options.myMixin={
-                        created () {
-                            this[prop]();
-                        },
-                        methods: {
-                            [prop]:value
-                        }
-                    }
-            }else{
-                options.data[prop]=value;
-            }
-        }
-    }
-    return options;
-}
+
 Message.installMessage=function(element,options){
     var el;
     if(arguments.length===0){
@@ -69,4 +49,5 @@ Message.installMessage=function(element,options){
     }).$mount();
     el.append(component.$el);
 }
+
 export default Message

@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div :class ="[layerMsg,shown? 'l-msg-show':'l-msg-hide']" :style="style">
+        <div class="l-msg-style" :class ="[layerMsg,shown? 'l-msg-show':'l-msg-hide']" :style="style">
             {{text}}
         </div>
     </transition>
@@ -12,7 +12,7 @@ const defaults={
     time:3000,
     icon:'',
     style:'',
-    layerMsg:'layer-msg'
+    layerMsg:'l-msg-style-doc'
 }
 export default {
     name:'layerMsg',
@@ -30,14 +30,8 @@ export default {
         // this.close()
     },
     methods:{
-        // close(){
-        //     var _this=this;
-        //     window.setTimeout(()=>{
-        //         _this.isShow=false;
-        //     },this.time);
-        // }
-        init(){
-            document.body.appendChild(this.$el);
+        init(el){
+            el.appendChild(this.$el);
             this.inited=true;
         },
         config(cfg){
@@ -53,16 +47,27 @@ export default {
             this.inited=false;
         },
         show(opt){
-            if(!this.inited){
-                this.init();
+            var el,opts;
+            if(arguments.length===1){
+                el =document.body;
+                opts=opt;
             }
-            if(typeof opt ==='string'){
-                opt={
-                    text:opt,
+            if(arguments.length>1){
+                el=opt;
+                opts = arguments[1];
+                defaults.layerMsg='l-msg-style-el';
+                el.style.position='relative';
+            }
+            if(!this.inited){
+                this.init(el);
+            }
+            if(typeof opts ==='string'){
+                opts={
+                    text:opts,
                 };
             }
             clearTimeout(this.timer);
-            this.config(opt);
+            this.config(opts);
             this.shown = true;
             if(!this.autohide){
                 return;
@@ -79,8 +84,7 @@ export default {
 }
 </script>
 <style>
-    .layer-msg{
-        position: fixed;
+    .l-msg-style{
         padding: 10px;
         color: #fff;
         background-color: #5F6161;
@@ -89,6 +93,12 @@ export default {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 999999999
+    }
+    .l-msg-style-doc{
+        position: fixed;      
+    }
+    .l-msg-style-el{
+        position: absolute;
     }
     .l-msg-show{
 

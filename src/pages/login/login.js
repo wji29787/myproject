@@ -9,6 +9,7 @@ import layer from '../../components/v-layer'
 Vue.config.productionTip = false ;
 axios.defaults.baseURL='http://192.168.95.252:3000';
 axios.defaults.headers['Access-Control-Allow-Origin']='*';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 Vue.prototype.$http=axios;
 Vue.use(layer);
 /* eslint-disable no-new */

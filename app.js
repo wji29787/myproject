@@ -33,7 +33,7 @@ app.use(staticCache(path.join(__dirname, './dist/pages'), { dynamic: true }, {
 }));
 app.use(proxy('/api', {
     target: 'http://192.168.95.108:8080/cms',
-    pathRewrite: { '^/api': '' },
+    // pathRewrite: { '^/api': '' },
     changeOrigin: true
   }))
 

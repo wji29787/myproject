@@ -1,4 +1,5 @@
 import LayerMsg from './layermsg/index';
+import Loading from './layerloading/index';
 
 
 const install =function(Vue){
@@ -8,11 +9,16 @@ const install =function(Vue){
     const ComponentMsg=Vue.extend(
         LayerMsg.name? LayerMsg:LayerMsg.default
     )
-    // Vue.component(LayerMsg.name,LayerMsg);
-    // Vue.prototype.$layer_msg =LayerMsg.installMessage;
+    const ComponentLoading=Vue.extend(
+        Loading.name? Loading:Loading.default
+    )
     Vue.component(ComponentMsg.options.name,ComponentMsg);
+    Vue.component(ComponentLoading.options.name,ComponentLoading);
     Vue.prototype[`$${ComponentMsg.options.name}`]= new ComponentMsg({
         el:document.createElement(ComponentMsg.options.tag || 'div')
+    })
+    Vue.prototype[`$${ComponentLoading.options.name}`]= new ComponentLoading({
+        el:document.createElement(ComponentLoading.options.tag || 'div')
     })
     install.installed=true;
 }

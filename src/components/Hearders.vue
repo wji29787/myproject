@@ -15,8 +15,7 @@
                 <h1 class="header-logo">
                     <a href="main/main.do">
                         <img src="../assets/images/logo.png" alt=""/>
-                        <!-- <%-- <strong>视联网存储服务系统&nbsp;V<%=SiteConfig.getV2vVersion() %></strong> --%> -->
-                        <p>视联网存储服务系统<br><span>V<%=SiteConfig.getV2vVersion() %></span></p>
+                        <p>视联网存储服务系统<br><span></span></p>
                     </a>
                 </h1>
                 <nav class="header-nav">

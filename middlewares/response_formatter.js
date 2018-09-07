@@ -5,7 +5,7 @@ const ApiError  =require('../app/error/ApiError');
  * 在app.use(router)之前调用
  */
 
- var response_formatter = (ctx) => {
+let response_formatter = (ctx) => {
     
      //如果有返回数据，将返回数据添加到data中
 

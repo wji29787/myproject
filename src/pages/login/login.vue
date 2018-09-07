@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import qs from 'qs';
 export default {
   	name: 'login',
     data(){
@@ -39,9 +40,9 @@ export default {
         login(){
             var _this=this;
            if(!this.lock) return;
-           this.lock =false;
+           
             // this.$layerMsg.show(document.querySelector('.login-box-content'),'jajajaj');
-            // window.location='main.html';
+            // window.location='http://192.168.95.182:8080/cms';
             let ref =/^[A-Za-z0-9_]+$/;
             if(!this.user_name){
                 this.$layerMsg.show('用户名不能为空');          
@@ -53,18 +54,28 @@ export default {
             if(!this.pass_word){
                 this.$layerMsg.show('密码不能为空');
                 return;
-            }
-            this.$http.post('api/userManagement/logon.do',{ 
-                username:this.user_name,
-				password:this.pass_word
+			}
+			// this.$loading.showng(document.querySelector('.login-box-content'));
+            this.lock =false; 
+            this.$http.post('/api/user/logon.do',{ 
+                    name:this.user_name,
+                    pwd:this.pass_word
+                } ,{
+                transformRequest:[function(params){
+					
+					return qs.stringify(params);
+					
+                }],
+                // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).then((res)=>{
-                _this.lock =true;
-                console.log(res);
+                if(res.data.result){
+                    window.location=`main.html?sessionID=${res.data.sessionID}`;
+                }             
+                this.$layerMsg.show(res.data.msg);
+                this.lock =true;              
             }).catch((err)=>{
-                _this.lock =true;
-            });
-
-            
+                this.lock =true;
+            });              
         }
     }
 }

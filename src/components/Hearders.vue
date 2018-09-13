@@ -1,31 +1,19 @@
     <template>
-           <div class="header-box">
-                <!-- <div> 
-                <ul>
-                    <li :class="{'active':message==1}"><a href="./contentEditing.html">11</a></li>
-                    <li :class="{'active':message==2}"><a href="./login.html">22</a></li>
-                    <li :class="{'active':message==3}"><a href="./main.html">33</a></li>
-                    <li :class="{'active':message==4}"><a href="./materialResources.html">44</a></li>
-                    <li :class="{'active':message==5}"><a href="./operationManagement.html">55</a></li>
-                    <li :class="{'active':message==6}"><a href="./userManagement.html">66</a></li>
-                    <li :class="{'active':message==7}"><a href="./videoResources.html">77</a></li>
-                </ul>                
-                </div>  -->
-
+           <div class="header-box">           
                 <h1 class="header-logo">
-                    <a href="main/main.do">
+                    <a href="main">
                         <img src="../assets/images/logo.png" alt=""/>
-                        <p>视联网存储服务系统<br><span></span></p>
+                        <strong>视联网存储服务系统&nbsp;122333</strong>
                     </a>
                 </h1>
                 <nav class="header-nav">
                    <ul>
-                        <li :class="{'active':message==1}"><a href="./main.html">首页</a></li>
-                        <li :class="{'active':message==2}"><a href="./materialResources.html">内容管理</a></li>
-                        <li :class="{'active':message==3}"><a href="./videoResources.html">视频资源</a> </li>
-                        <li :class="{'active':message==4}"><a href="./userManagement.html">用户管理</a></li>
-                        <li :class="{'active':message==5}"><a href="./operationManagement.html">运维管理</a></li>
-			        </ul>
+                        <li :class="{'active':message==1}"><a href="main">首页</a></li>
+                        <li :class="{'active':message==2}"><a href="materialResources">内容管理</a></li>
+                        <li :class="{'active':message==3}"><a href="videoResources">视频资源</a> </li>
+                        <li :class="{'active':message==4}"><a href="userManagement">用户管理</a></li>
+                        <li :class="{'active':message==5}"><a href="operationManagement">运维管理</a></li>
+			              </ul>
                 </nav>
 		
                 <div class="heder-userinfo">
@@ -41,25 +29,19 @@
 
             </div>
     </template>
-    <script>
-export default {
-  name: "Hearders",
-  props: ["message",'username'],
-  data() {
-    return {
-      // pathUrlData:[
-      //     {
-      //     }
-      // ]
-    };
-  }
-};
+  <script>
+      export default {
+        name: "Hearders",
+        props: ["message", "username"],
+        data() {
+          return {
+        
+          };
+        }
+      };
 </script>
-    <style scoped>
-/* .active {
-  color: red;
-  background-color: gold;
-} */
+<style scoped>
+
 .header-box {
   position: relative;
   max-width: 19.2rem;

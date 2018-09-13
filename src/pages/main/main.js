@@ -2,27 +2,27 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-// import router from './router'
+import router from './router'
 //
 import axios from 'axios';
-// import '../../assets/css/base.css';
-// import '../../assets/iconfont/iconfont';
-// import '../../assets/css/common.css';
+import '../../assets/css/base.css';
+import '../../assets/iconfont/iconfont';
+import '../../assets/css/common.css';
 // 对象序列化
-// import Qs from 'qs';
-//弹窗组建
+import Qs from 'qs';
+//弹窗组件
 import layer from '../../components/v-layer';
 Vue.config.productionTip = false
 axios.defaults.baseURL='http://192.168.95.252:3000/api';
 axios.defaults.headers['Access-Control-Allow-Origin']='*';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-// Vue.prototype.$qs = Qs; 
-// Vue.prototype.$http=axios;
+Vue.prototype.$qs = Qs; 
+Vue.prototype.$http=axios;
 Vue.use(layer);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  // router,
+  router,
   components: { App },
   template: '<App/>'
 })

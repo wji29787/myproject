@@ -12,6 +12,10 @@ exports.getUser=async (ctx,next)=>{
         throw new ApiError(ApiErrorNames.USER_NOT_EXIST);
     }
     // console.log(ctx.query);
+    ctx.cookies.set('aaaa2','dfsfdfff',{
+        httpOnly:true,
+        path:'/cms'
+    })
     ctx.body={
         username:'dsdsdd',
         age:30

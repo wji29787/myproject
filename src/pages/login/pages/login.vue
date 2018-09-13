@@ -2,7 +2,7 @@
   <div class="login-box">
 			<div class="login-box-title">
 				<h1>
-					<img src="./images/login_logo.png" />
+					<img src="../images/login_logo.png" />
 					<span>视联网内容管理系统</span>
 				</h1>
 			</div>
@@ -56,11 +56,18 @@ export default {
                 return;
 			}
 			// this.$loading.showng(document.querySelector('.login-box-content'));
+			// let path ='/api/user/logon.do';
+			let path ='/api/userManagement/logon.do';
+			// let opt ={
+ 			// 		name:this.user_name,
+            //         pwd:this.pass_word
+			// };
+			let opt ={
+ 					username:this.user_name,
+                    password:this.pass_word
+			};
             this.lock =false; 
-            this.$http.post('/api/user/logon.do',{ 
-                    name:this.user_name,
-                    pwd:this.pass_word
-                } ,{
+            this.$http.post(path,opt,{
                 transformRequest:[function(params){
 					
 					return qs.stringify(params);
@@ -69,13 +76,27 @@ export default {
                 // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).then((res)=>{
                 if(res.data.result){
-                    window.location=`main.html?sessionID=${res.data.sessionID}`;
-                }             
+                    window.location='main';
+				}  
+				// console.log(res);           
                 this.$layerMsg.show(res.data.msg);
                 this.lock =true;              
             }).catch((err)=>{
                 this.lock =true;
-            });              
+			});  
+			// this.$http.get('api/users/getUser',{
+			// 	params:{
+			// 		id:1
+			// 	}
+			// })
+			// .then((res)=>{
+			// 	window.location='main';
+			// 	this.lock =true; 
+			// })
+			// .catch((err)=>{
+			// 	 this.lock =true;
+			// 	 console.log(err);
+			// })            
         }
     }
 }
@@ -138,10 +159,10 @@ export default {
 	color:#cfe2fd;
 }
 .login-box-content-input:first-child{
-	background: url('./images/ico_user.png') no-repeat 0.4rem/ 0.3rem 0.3rem;
+	background: url('../images/ico_user.png') no-repeat 0.4rem/ 0.3rem 0.3rem;
 }
 .login-box-content-input:nth-child(2){
-	background: url('./images/ico_password.png') no-repeat 0.4rem/ 0.3rem 0.3rem;
+	background: url('../images/ico_password.png') no-repeat 0.4rem/ 0.3rem 0.3rem;
 }
 .login-box-content-input input{
 	width: 100%;

@@ -1,4 +1,4 @@
-const ApiError  =require('../app/error/ApiError');
+const ApiError = require('../app/error/ApiError');
 
 /**
  * 
@@ -23,7 +23,7 @@ let response_formatter = (ctx) => {
      }
  }
 
- let url_filter = (pattern) => {
+let url_filter = (pattern) => {
     return async (ctx,next)=>{
         var reg =new RegExp(pattern);
         try{
@@ -48,6 +48,6 @@ let response_formatter = (ctx) => {
             response_formatter(ctx);
         }
     }
- }
+}
 
- module.exports = url_filter;
+module.exports = url_filter;

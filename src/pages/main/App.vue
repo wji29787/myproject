@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="box-body">
     <Hearders :message="1"></Hearders>  
-    <button @click="upload">click me</button>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -74,19 +74,9 @@ export default {
 </script>
 
 <style>
-/* .box-body{
-    width:100%;
-    height:100%;
-    background:#030d26;
-} */
-/* .box-body .content{
+.box-body{
 	width:100%;
-	height:calc(100% - 0.68rem);
-	padding-top: .3rem;
-	color:#8eb1c0;
-	font-size: .22rem;
-	background-image: url(../../images/main/bg.png);
-	background-size: 100% 100%;
-} */
-
+	height:100%;
+	background:#030d26;
+}
 </style>
